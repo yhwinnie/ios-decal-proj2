@@ -31,31 +31,24 @@ class HangmanViewController: UIViewController {
     }
     
     @IBAction func startOverGame(sender: AnyObject) {
-        hang.guessedLetters = NSMutableArray()
-        let phrase = hang.answer
-        self.lettersGuessed.text = "Guessed: "
-//        for (var i = 0; i < hang.answer!.characters.count; i += 1) {
-//            if (phrase as NSString).substringWithRange(NSMakeRange(i, 1)) == " " {
-//                hang.knownString = hang.knownString! + " "
-//            } else {
-//                hang.knownString = hang.knownString! + "_"
-//            }
-//        }
+        hang.start()
         self.userGuess.text = hang.knownString
         hangmanImage.image = UIImage(named: "hangman1.gif")
-        print(hang.answer)
+        self.lettersGuessed.text = "Guessed: "
         
     }
     
     var i = 2;
+    var string = "Guessed: "
     
-
     @IBAction func guessButton(sender: AnyObject) {
-        if (self.itemText.text!.characters.count == 1) {
-            let result = hang.guessLetter(self.itemText.text!)
-        
+        var letter = self.itemText.text!.uppercaseString
+        if (letter.characters.count == 1) {
+            let result = hang.guessLetter(letter)
+            
+    
             itemText.text = ""
-        
+            
             if (result == false) {
                 var name = "hangman\(i).gif"
                 hangmanImage.image = UIImage(named: name)
@@ -65,7 +58,7 @@ class HangmanViewController: UIViewController {
                 self.userGuess.text = hang.knownString
             }
         
-            self.lettersGuessed.text = hang.guesses()
+            self.lettersGuessed.text = string + hang.guesses()
         
             if (hang.knownString == hang.answer!) {
                 let alert = UIAlertView()
@@ -75,7 +68,7 @@ class HangmanViewController: UIViewController {
                 alert.show()
             }
         
-            if (hang.guessedLetters!.count == 6) {
+            if (i == 7) {
                 let alert = UIAlertView()
                 alert.title = "Alert"
                 alert.message = "You Lost!"
@@ -96,8 +89,6 @@ class HangmanViewController: UIViewController {
     @IBOutlet weak var lettersGuessed: UILabel!
 
 
-    
-    
     @IBOutlet weak var StartGame: UIButton!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

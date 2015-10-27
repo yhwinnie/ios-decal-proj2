@@ -46,6 +46,7 @@ class Hangman {
         var chars = Array(answer!.characters)
         
         for (var i = 0; i < answer!.characters.count; i += 1) {
+
             if String(chars[i]) == letter {
                 isCorrect = true
                 knownString = "\((knownString! as NSString).substringToIndex(i))" + "\(letter)"

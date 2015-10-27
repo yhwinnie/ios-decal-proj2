@@ -33,20 +33,14 @@
                                     <action selector="startOverGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="McC-W1-xmT"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="REx-dt-3t2">
-                                <rect key="frame" x="123" y="285" width="355" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Guessed: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHI-EI-Viv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guessed: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHI-EI-Viv">
                                 <rect key="frame" x="262" y="347" width="77" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bex-KY-beu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bex-KY-beu">
                                 <rect key="frame" x="279" y="393" width="43" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Guess"/>
@@ -58,27 +52,36 @@
                                 <rect key="frame" x="180" y="62" width="240" height="128"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Letter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gje-9v-oox">
-                                <rect key="frame" x="277" y="221" width="46" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Letter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gje-9v-oox">
+                                <rect key="frame" x="277" y="224" width="46" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="REx-dt-3t2">
+                                <rect key="frame" x="123" y="285" width="355" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Gje-9v-oox" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2dL-ln-ZLk"/>
+                            <constraint firstItem="Bex-KY-beu" firstAttribute="top" secondItem="tHI-EI-Viv" secondAttribute="bottom" constant="25" id="0LK-KU-bso"/>
+                            <constraint firstItem="REx-dt-3t2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1I1-p2-2k6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="elq-Lc-NRr" secondAttribute="trailing" constant="-6" id="5xW-C4-pqe"/>
                             <constraint firstItem="Bex-KY-beu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FWS-Ek-CY8"/>
-                            <constraint firstItem="REx-dt-3t2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="103" id="IlA-Zb-fFa"/>
+                            <constraint firstItem="Gje-9v-oox" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JXC-po-JM9"/>
                             <constraint firstItem="TLD-2s-wHb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="LYa-0k-nAO"/>
                             <constraint firstItem="TLD-2s-wHb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="RCb-Xn-ZFQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="REx-dt-3t2" secondAttribute="trailing" constant="102" id="VP6-lL-rCt"/>
+                            <constraint firstItem="bra-zF-UbZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cew-9p-OVT"/>
+                            <constraint firstItem="tHI-EI-Viv" firstAttribute="top" secondItem="REx-dt-3t2" secondAttribute="bottom" constant="32" id="j4D-zY-ObT"/>
+                            <constraint firstItem="REx-dt-3t2" firstAttribute="top" secondItem="Gje-9v-oox" secondAttribute="bottom" constant="40" id="o9J-89-P6G"/>
                             <constraint firstItem="elq-Lc-NRr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="qy0-ma-9tw"/>
                             <constraint firstItem="tHI-EI-Viv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sfg-Dl-GNU"/>
-                            <constraint firstItem="bra-zF-UbZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ull-ii-xFp"/>
+                            <constraint firstItem="REx-dt-3t2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zMK-u1-zyI"/>
                         </constraints>
                     </view>
                     <connections>
