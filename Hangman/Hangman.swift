@@ -52,7 +52,6 @@ class Hangman {
                 isCorrect = true
                 knownString = "\((knownString! as NSString).substringToIndex(i))" + "\(letter)"
                             + "\((knownString! as NSString).substringFromIndex(i+1))"
-                //print(knownString)
             }
         }
         return isCorrect

@@ -58,7 +58,6 @@ class HangmanViewController: UIViewController {
             
     
             itemText.text = ""
-            print(hang.answer)
             
             if (result == false) {
                 var name = "hangman\(i).gif"
@@ -72,9 +71,7 @@ class HangmanViewController: UIViewController {
                     //print(alert.addButtonWithTitle("Start Over"))
                     var lost = alert.addButtonWithTitle("Start Over")
                     if (lost == 1) {
-                        print("A")
                         hang.start()
-                        print("V")
                         self.userGuess.text = hang.knownString
                         hangmanImage.image = UIImage(named: "hangman1.gif")
                         self.lettersGuessed.text = "Guessed: "
