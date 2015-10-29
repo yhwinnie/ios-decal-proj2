@@ -18,6 +18,7 @@ class HangmanViewController: UIViewController {
         self.userGuess.text = hang.knownString
         hangmanImage.image = UIImage(named: "hangman1.gif")
         self.lettersGuessed.text = "Guessed: "
+        hang.guessedLetters = NSMutableArray()
     }
     @IBOutlet weak var userGuess: UILabel!
     @IBOutlet weak var itemText: UITextField!
@@ -35,6 +36,8 @@ class HangmanViewController: UIViewController {
         self.userGuess.text = hang.knownString
         hangmanImage.image = UIImage(named: "hangman1.gif")
         self.lettersGuessed.text = "Guessed: "
+        hang.guessedLetters = NSMutableArray()
+
         
     }
     
@@ -42,39 +45,66 @@ class HangmanViewController: UIViewController {
     var string = "Guessed: "
     
     @IBAction func guessButton(sender: AnyObject) {
+        
+        
+        
         var letter = self.itemText.text!.uppercaseString
+
+        
+
         if (letter.characters.count == 1) {
             let result = hang.guessLetter(letter)
             
+            
     
             itemText.text = ""
+            print(hang.answer)
             
             if (result == false) {
                 var name = "hangman\(i).gif"
                 hangmanImage.image = UIImage(named: name)
+                if (i == 7) {
+                    let alert = UIAlertView()
+                    alert.title = "Alert"
+                    alert.message = "You Lost!"
+                    alert.addButtonWithTitle("Start Over")
+                    alert.show()
+                    //print(alert.addButtonWithTitle("Start Over"))
+                    var lost = alert.addButtonWithTitle("Start Over")
+                    if (lost == 1) {
+                        print("A")
+                        hang.start()
+                        print("V")
+                        self.userGuess.text = hang.knownString
+                        hangmanImage.image = UIImage(named: "hangman1.gif")
+                        self.lettersGuessed.text = "Guessed: "
+                        hang.guessedLetters = NSMutableArray()
+                    }
+                }
                 i += 1
+                
             }
             else {
                 self.userGuess.text = hang.knownString
+                if (hang.knownString == hang.answer!) {
+                    let alert = UIAlertView()
+                    alert.title = "Alert"
+                    alert.message = "You Win!"
+                    alert.addButtonWithTitle("New Game")
+                    alert.show()
+                    
+                    if (alert.addButtonWithTitle("New Game") == 1) {
+                        hang.start()
+                        self.userGuess.text = hang.knownString
+                        hangmanImage.image = UIImage(named: "hangman1.gif")
+                        self.lettersGuessed.text = "Guessed: "
+                        hang.guessedLetters = NSMutableArray()
+                    }
+                }
             }
         
             self.lettersGuessed.text = string + hang.guesses()
         
-            if (hang.knownString == hang.answer!) {
-                let alert = UIAlertView()
-                alert.title = "Alert"
-                alert.message = "You Win!"
-                alert.addButtonWithTitle("New Game")
-                alert.show()
-            }
-        
-            if (i == 7) {
-                let alert = UIAlertView()
-                alert.title = "Alert"
-                alert.message = "You Lost!"
-                alert.addButtonWithTitle("Start Over")
-                alert.show()
-            }
         }
         else {
             let alert = UIAlertView()
@@ -96,6 +126,7 @@ class HangmanViewController: UIViewController {
         //hang.start()
     }
     
+
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }

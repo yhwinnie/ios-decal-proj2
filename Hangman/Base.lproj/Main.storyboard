@@ -25,14 +25,6 @@
                                     <action selector="startNewGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xXC-qt-obG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLD-2s-wHb">
-                                <rect key="frame" x="28" y="28" width="71" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Start Over"/>
-                                <connections>
-                                    <action selector="startOverGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="McC-W1-xmT"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guessed: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHI-EI-Viv">
                                 <rect key="frame" x="262" y="347" width="77" height="21"/>
                                 <animations/>
@@ -65,21 +57,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLD-2s-wHb">
+                                <rect key="frame" x="20" y="28" width="71" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Start Over"/>
+                                <connections>
+                                    <action selector="startOverGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="McC-W1-xmT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Bex-KY-beu" firstAttribute="top" secondItem="tHI-EI-Viv" secondAttribute="bottom" constant="25" id="0LK-KU-bso"/>
                             <constraint firstItem="REx-dt-3t2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1I1-p2-2k6"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="TLD-2s-wHb" secondAttribute="leading" id="5f4-Rb-Lwq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="elq-Lc-NRr" secondAttribute="trailing" constant="-6" id="5xW-C4-pqe"/>
                             <constraint firstItem="Bex-KY-beu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FWS-Ek-CY8"/>
                             <constraint firstItem="Gje-9v-oox" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JXC-po-JM9"/>
-                            <constraint firstItem="TLD-2s-wHb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="LYa-0k-nAO"/>
-                            <constraint firstItem="TLD-2s-wHb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="RCb-Xn-ZFQ"/>
+                            <constraint firstItem="TLD-2s-wHb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="St0-92-WTs"/>
+                            <constraint firstItem="elq-Lc-NRr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="cbD-RF-HU4"/>
                             <constraint firstItem="bra-zF-UbZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cew-9p-OVT"/>
                             <constraint firstItem="tHI-EI-Viv" firstAttribute="top" secondItem="REx-dt-3t2" secondAttribute="bottom" constant="32" id="j4D-zY-ObT"/>
                             <constraint firstItem="REx-dt-3t2" firstAttribute="top" secondItem="Gje-9v-oox" secondAttribute="bottom" constant="40" id="o9J-89-P6G"/>
-                            <constraint firstItem="elq-Lc-NRr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="qy0-ma-9tw"/>
                             <constraint firstItem="tHI-EI-Viv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sfg-Dl-GNU"/>
                             <constraint firstItem="REx-dt-3t2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zMK-u1-zyI"/>
                         </constraints>
